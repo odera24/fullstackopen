@@ -1,0 +1,51 @@
+title 0.5 Single Page App
+
+
+
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+
+Server->Browser: HTML code
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+Server->Browser: main.css
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+
+Server->Browser: spa.js
+
+note over Browser: 
+Browser starts executing code on main.js 
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+Server->Browser:[{"content":"DDD","date":"2021-10-27T12:05:29.062Z"},...]
+
+note over Browser:
+browser executes the event handler
+that renders notes to display
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+
+Server->Browser: favicon.ico
+
+note over Browser: 
+User enters new note and click on 'Save' 
+end note
+
+note over Browser:
+browser executes the event handler
+that makes ajax call to new_note_spa to submit new data
+end note
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+Server->Browser: {"message":"note created"}
+
+note over Browser:
+browser executes the event handler
+that re-renders notes to display
+end note

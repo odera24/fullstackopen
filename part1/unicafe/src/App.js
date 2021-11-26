@@ -62,10 +62,7 @@ const App = () => {
     setAverageTotal({...stats, average: stats.average - 1, total: stats.total + 1})
     setBad(bad + 1)
   }
-
   
-
-
   return (
     <div>
       <h1>give feedback</h1>
